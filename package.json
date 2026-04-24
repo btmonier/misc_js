@@ -1,0 +1,24 @@
+{
+  "name": "misc-js",
+  "private": true,
+  "type": "module",
+  "description": "A monorepo of isolated browser sandboxes for JS/TS/HTML experiments.",
+  "workspaces": [
+    "sandboxes/*"
+  ],
+  "scripts": {
+    "new": "bun run scripts/new.ts",
+    "dev": "bun run scripts/dev.ts",
+    "build": "bun run scripts/build-all.ts",
+    "list": "bun run scripts/list.ts",
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "bun x tsc --build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.13",
+    "@types/bun": "^1.3.13",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
+  }
+}
