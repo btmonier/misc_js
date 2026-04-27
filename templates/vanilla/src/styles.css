@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b0d10;
+  --fg: #e6e6e6;
+  --accent: #7dd3fc;
+  --muted: #9aa0a6;
+  --card: #15181d;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fafafa;
+    --fg: #111;
+    --accent: #0369a1;
+    --muted: #555;
+    --card: #fff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+code {
+  padding: 0.1em 0.35em;
+  background: var(--card);
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+#output {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+}
+
+#output p {
+  margin: 0.25rem 0;
+}
+
+strong {
+  color: var(--accent);
+}
