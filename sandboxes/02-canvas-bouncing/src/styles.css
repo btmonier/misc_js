@@ -1,0 +1,50 @@
+:root {
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #05070a;
+  color: #eaeaea;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+#stage {
+  display: block;
+  position: fixed;
+  inset: 0;
+}
+.hud {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 18, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem;
+}
+button {
+  font: inherit;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(125, 211, 252, 0.4);
+  background: transparent;
+  color: #7dd3fc;
+  cursor: pointer;
+  margin-right: 0.25rem;
+}
+button:hover {
+  background: rgba(125, 211, 252, 0.12);
+}
+span {
+  font-variant-numeric: tabular-nums;
+  color: #7dd3fc;
+}

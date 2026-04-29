@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Bouncing Balls</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <aside class="hud">
+      <strong>Bouncing balls</strong>
+      <div>
+        <button type="button" id="add">+ 10 balls</button>
+        <button type="button" id="reset">reset</button>
+      </div>
+      <div>count: <span id="count">0</span></div>
+      <div>fps: <span id="fps">&mdash;</span></div>
+    </aside>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
