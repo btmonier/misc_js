@@ -2,7 +2,7 @@
 
 A personal monorepo for trying out JavaScript, TypeScript, and HTML ideas in
 fully isolated browser sandboxes. Each sandbox is its own package with its own
-dependencies, dev server, and build — so experiments can't contaminate each
+dependencies, dev server, and build so experiments can't contaminate each
 other.
 
 ## Current stack
