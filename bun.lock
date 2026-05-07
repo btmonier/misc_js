@@ -17,6 +17,9 @@
     "sandboxes/02-canvas-bouncing": {
       "name": "@sandbox/02-canvas-bouncing",
     },
+    "sandboxes/04-game-of-life": {
+      "name": "@sandbox/04-game-of-life",
+    },
   },
   "packages": {
     "@biomejs/biome": ["@biomejs/biome@2.4.13", "", { "optionalDependencies": { "@biomejs/cli-darwin-arm64": "2.4.13", "@biomejs/cli-darwin-x64": "2.4.13", "@biomejs/cli-linux-arm64": "2.4.13", "@biomejs/cli-linux-arm64-musl": "2.4.13", "@biomejs/cli-linux-x64": "2.4.13", "@biomejs/cli-linux-x64-musl": "2.4.13", "@biomejs/cli-win32-arm64": "2.4.13", "@biomejs/cli-win32-x64": "2.4.13" }, "bin": { "biome": "bin/biome" } }, "sha512-gLXOwkOBBg0tr7bDsqlkIh4uFeKuMjxvqsrb1Tukww1iDmHcfr4Uu8MoQxp0Rcte+69+osRNWXwHsu/zxT6XqA=="],
@@ -82,6 +85,8 @@
     "@sandbox/01-hello-dom": ["@sandbox/01-hello-dom@workspace:sandboxes/01-hello-dom"],
 
     "@sandbox/02-canvas-bouncing": ["@sandbox/02-canvas-bouncing@workspace:sandboxes/02-canvas-bouncing"],
+
+    "@sandbox/04-game-of-life": ["@sandbox/04-game-of-life@workspace:sandboxes/04-game-of-life"],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
