@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random color palette</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2214%22>&#127912;</text></svg>" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="masthead">
+        <div>
+          <h1>Random palette</h1>
+          <p class="subtitle">Harmonious hues &mdash; click a swatch to copy hex. Space generates a new set.</p>
+        </div>
+        <button type="button" id="regenerate" class="btn-primary">New palette</button>
+      </header>
+
+      <section id="palette" class="palette" aria-label="Color swatches"></section>
+
+      <p id="hint" class="hint" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

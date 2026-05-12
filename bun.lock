@@ -17,8 +17,14 @@
     "sandboxes/02-canvas-bouncing": {
       "name": "@sandbox/02-canvas-bouncing",
     },
+    "sandboxes/03-sprites": {
+      "name": "@sandbox/03-sprites",
+    },
     "sandboxes/04-game-of-life": {
       "name": "@sandbox/04-game-of-life",
+    },
+    "sandboxes/05-random-color-palette": {
+      "name": "@sandbox/05-random-color-palette",
     },
   },
   "packages": {
@@ -86,7 +92,11 @@
 
     "@sandbox/02-canvas-bouncing": ["@sandbox/02-canvas-bouncing@workspace:sandboxes/02-canvas-bouncing"],
 
+    "@sandbox/03-sprites": ["@sandbox/03-sprites@workspace:sandboxes/03-sprites"],
+
     "@sandbox/04-game-of-life": ["@sandbox/04-game-of-life@workspace:sandboxes/04-game-of-life"],
+
+    "@sandbox/05-random-color-palette": ["@sandbox/05-random-color-palette@workspace:sandboxes/05-random-color-palette"],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
