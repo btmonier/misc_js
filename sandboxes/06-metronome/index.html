@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metronome</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2214%22>&#128225;</text></svg>" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="masthead">
+        <div>
+          <h1>Metronome</h1>
+          <p class="subtitle">Precise clicks via the Web Audio clock. Space starts or stops (except in text fields, the bar-length menu, or the accent checkbox).</p>
+        </div>
+        <button type="button" id="toggle" class="btn-primary" aria-pressed="false">Start</button>
+      </header>
+
+      <section class="stage" aria-label="Beat indicator">
+        <div id="pendulum" class="pendulum" aria-hidden="true"></div>
+        <div class="readout">
+          <span id="bpm-label" class="bpm-readout">120</span>
+          <span class="bpm-unit">BPM</span>
+        </div>
+        <p id="beat-display" class="beat-display" aria-live="polite">—</p>
+      </section>
+
+      <section class="controls" aria-label="Metronome settings">
+        <div class="field">
+          <label for="bpm-range">Tempo</label>
+          <div class="bpm-row">
+            <input
+              id="bpm-range"
+              type="range"
+              min="30"
+              max="400"
+              value="120"
+              step="1"
+              aria-describedby="bpm-number-label"
+            />
+            <input
+              id="bpm-input"
+              type="number"
+              min="30"
+              max="400"
+              value="120"
+              inputmode="numeric"
+              aria-labelledby="bpm-number-label"
+            />
+          </div>
+          <span id="bpm-number-label" class="sr-only">Beats per minute, 30 to 400</span>
+        </div>
+
+        <div class="field field-inline">
+          <label for="beats">Beats per bar</label>
+          <select id="beats" aria-label="Beats per measure">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
+        <div class="field field-checkbox">
+          <input type="checkbox" id="accent" checked />
+          <label for="accent">Accent downbeat</label>
+        </div>
+      </section>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
