@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A* pathfinding</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <aside class="hud">
+      <strong>A* pathfinding</strong>
+      <p class="hint">
+        Select the sprite and click to move. Right-click deselects. Enable the tile
+        editor to paint walkable and unwalkable tiles inside the fixed border.
+      </p>
+      <div class="actions">
+        <button type="button" id="randomize">Random walls</button>
+        <button type="button" id="clear">Clear walls</button>
+      </div>
+      <div id="tile-editor"></div>
+      <div>path length: <span id="path-len">&mdash;</span></div>
+      <div>explored: <span id="explored">&mdash;</span></div>
+      <div>status: <span id="status">ready</span></div>
+    </aside>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

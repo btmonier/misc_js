@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #05070a;
+  color: #eaeaea;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+#stage {
+  display: block;
+  position: fixed;
+  inset: 0;
+  touch-action: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.hud {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  max-width: min(24rem, calc(100vw - 2rem));
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 18, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem;
+}
+.hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9aa0a6;
+  line-height: 1.4;
+}
+.hint code {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+button {
+  font: inherit;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(125, 211, 252, 0.4);
+  background: transparent;
+  color: #7dd3fc;
+  cursor: pointer;
+}
+button:hover {
+  background: rgba(125, 211, 252, 0.12);
+}
+button.active {
+  background: rgba(125, 211, 252, 0.2);
+  border-color: #7dd3fc;
+}
+span {
+  font-variant-numeric: tabular-nums;
+  color: #7dd3fc;
+}
+
+.tile-editor {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: rgba(8, 10, 14, 0.55);
+}
+.tile-editor--active {
+  border-color: rgba(125, 211, 252, 0.35);
+}
+.tile-editor__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.tile-editor__head strong {
+  font-size: 0.85rem;
+}
+.tile-editor__toggle {
+  min-width: 2.75rem;
+}
+.tile-editor__hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #9aa0a6;
+  line-height: 1.35;
+}
+.tile-editor__brushes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+}
+.tile-editor__brush {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.45rem;
+  font-size: 0.8rem;
+}
+.tile-editor__swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.tile-editor__swatch--walkable {
+  background: #0b0d12;
+}
+.tile-editor__swatch--unwalkable {
+  background: #334155;
+}
+#stage.edit-mode {
+  cursor: crosshair;
+}
