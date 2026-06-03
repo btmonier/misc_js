@@ -10,6 +10,8 @@
     "new": "bun run scripts/new.ts",
     "dev": "bun run scripts/dev.ts",
     "build": "bun run scripts/build-all.ts",
+    "site": "bun run scripts/build-site.ts",
+    "serve": "bun run scripts/serve.ts",
     "list": "bun run scripts/list.ts",
     "check": "biome check .",
     "format": "biome format --write .",
