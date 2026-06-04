@@ -35,6 +35,12 @@
     "sandboxes/08-prime-checker": {
       "name": "@sandbox/08-prime-checker",
     },
+    "sandboxes/09-identicon-avatars": {
+      "name": "@sandbox/09-identicon-avatars",
+    },
+    "sandboxes/fetch-streaming": {
+      "name": "@sandbox/fetch-streaming",
+    },
   },
   "packages": {
     "@biomejs/biome": ["@biomejs/biome@2.4.13", "", { "optionalDependencies": { "@biomejs/cli-darwin-arm64": "2.4.13", "@biomejs/cli-darwin-x64": "2.4.13", "@biomejs/cli-linux-arm64": "2.4.13", "@biomejs/cli-linux-arm64-musl": "2.4.13", "@biomejs/cli-linux-x64": "2.4.13", "@biomejs/cli-linux-x64-musl": "2.4.13", "@biomejs/cli-win32-arm64": "2.4.13", "@biomejs/cli-win32-x64": "2.4.13" }, "bin": { "biome": "bin/biome" } }, "sha512-gLXOwkOBBg0tr7bDsqlkIh4uFeKuMjxvqsrb1Tukww1iDmHcfr4Uu8MoQxp0Rcte+69+osRNWXwHsu/zxT6XqA=="],
@@ -112,6 +118,10 @@
     "@sandbox/07-astar-pathfinding": ["@sandbox/07-astar-pathfinding@workspace:sandboxes/07-astar-pathfinding"],
 
     "@sandbox/08-prime-checker": ["@sandbox/08-prime-checker@workspace:sandboxes/08-prime-checker"],
+
+    "@sandbox/09-identicon-avatars": ["@sandbox/09-identicon-avatars@workspace:sandboxes/09-identicon-avatars"],
+
+    "@sandbox/fetch-streaming": ["@sandbox/fetch-streaming@workspace:sandboxes/fetch-streaming"],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
