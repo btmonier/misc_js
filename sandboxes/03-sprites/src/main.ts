@@ -29,6 +29,8 @@ const DPR = Math.min(window.devicePixelRatio || 1, 2);
 /** CSS pixels per source pixel when drawing each 16×16 frame. */
 const DRAW_SCALE = 2;
 
+const CANVAS_BG = "#f8f9fa";
+
 let sheet: HTMLImageElement | null = null;
 const halfDraw = (FRAME_PX * DRAW_SCALE) / 2;
 
@@ -173,7 +175,8 @@ function step(dt: number) {
 function draw() {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = CANVAS_BG;
+  ctx.fillRect(0, 0, w, h);
   const img = sheet;
   if (!img) return;
   for (const s of sprites) {

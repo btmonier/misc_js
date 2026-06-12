@@ -6,7 +6,6 @@
   --fg: #202124;
   --muted: #5f6368;
   --accent: #1a73e8;
-  --accent-hover: #1765cc;
   font-family:
     "Google Sans",
     Roboto,
@@ -30,7 +29,7 @@ body {
 }
 
 #app {
-  max-width: 480px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 4rem 1.5rem 3rem;
 }
@@ -42,7 +41,7 @@ body {
 
 h1 {
   margin: 0 0 0.5rem;
-  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--fg);
@@ -55,55 +54,54 @@ h1 {
   color: var(--muted);
 }
 
-.counter {
-  display: flex;
-  align-items: center;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
-  margin: 0 0 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
   padding: 1.25rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-}
-
-.counter button {
-  font: inherit;
-  font-size: 1.25rem;
-  font-weight: 500;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--accent);
-  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   transition:
-    background 0.15s ease,
-    border-color 0.15s ease;
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
 }
 
-.counter button:hover {
+.card:hover {
   border-color: #bdc1c6;
-  background: #fff;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.12);
+  transform: translateY(-1px);
 }
 
-.counter button:focus-visible {
+.card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-output {
-  flex: 1;
-  text-align: center;
-  font-size: 2.5rem;
-  font-variant-numeric: tabular-nums;
+.card-index {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.card-title {
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--fg);
 }
 
-.hint {
-  margin: 0;
-  text-align: center;
+.card-desc {
   font-size: 0.875rem;
+  line-height: 1.45;
   color: var(--muted);
 }

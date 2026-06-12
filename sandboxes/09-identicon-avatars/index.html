@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identicon avatars</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="masthead">
+        <h1>Identicon avatars</h1>
+        <p class="subtitle">
+          GitHub-style default profile images: a symmetric 5&times;5 pattern and pastel colors
+          derived from a seed string.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Seed controls">
+        <label class="field" for="seed">
+          <span class="field-label">Seed (username)</span>
+          <input
+            id="seed"
+            name="seed"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="e.g. octocat"
+          />
+        </label>
+        <div class="actions">
+          <button type="button" id="randomize" class="btn-secondary">Random name</button>
+          <button type="button" id="regenerate" class="btn-primary">New gallery</button>
+        </div>
+      </section>
+
+      <section class="preview-wrap" aria-label="Preview">
+        <p class="preview-label">Preview for current seed</p>
+        <div id="preview"></div>
+      </section>
+
+      <h2 class="gallery-heading">Gallery</h2>
+      <div id="gallery" class="gallery" aria-label="Generated avatars"></div>
+
+      <p class="hint">Press Space to regenerate the gallery (when focus is not in a field).</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

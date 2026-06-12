@@ -37,6 +37,26 @@ bun run typecheck
 bun run build
 ```
 
+## Landing page
+
+Build a single static site (a landing page that links to every sandbox) and
+browse it from one place:
+
+```bash
+# build every sandbox + landing page into dist/
+bun run site
+
+# serve dist/ at http://localhost:5050
+bun run serve
+
+# build and serve
+bun run ps
+```
+
+`bun run site` builds each sandbox with a relative base into `dist/<slug>/` and
+copies the landing page to `dist/index.html`. The result is a self-contained
+static site you can deploy anywhere.
+
 In case you need to delete a sandbox:
 
 ```bash
