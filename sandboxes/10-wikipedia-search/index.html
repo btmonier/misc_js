@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikipedia search</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="masthead">
+        <h1>Wikipedia search</h1>
+        <p class="subtitle">Enter text to find matching English Wikipedia articles.</p>
+      </header>
+
+      <form id="form" class="search-form" novalidate>
+        <label class="field" for="query">
+          <span class="field-label">Search</span>
+          <input
+            id="query"
+            name="query"
+            type="search"
+            autocomplete="off"
+            placeholder="e.g. Godzilla"
+            aria-describedby="status"
+          />
+        </label>
+        <button type="submit" class="btn-primary">Search</button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <ol id="results" class="results" aria-label="Search results"></ol>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
