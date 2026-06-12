@@ -48,6 +48,9 @@ bun run site
 
 # serve dist/ at http://localhost:5050
 bun run serve
+
+# build and serve
+bun run ps
 ```
 
 `bun run site` builds each sandbox with a relative base into `dist/<slug>/` and
