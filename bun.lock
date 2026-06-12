@@ -38,8 +38,8 @@
     "sandboxes/09-identicon-avatars": {
       "name": "@sandbox/09-identicon-avatars",
     },
-    "sandboxes/fetch-streaming": {
-      "name": "@sandbox/fetch-streaming",
+    "sandboxes/10-wikipedia-search": {
+      "name": "@sandbox/10-wikipedia-search",
     },
   },
   "packages": {
@@ -121,7 +121,7 @@
 
     "@sandbox/09-identicon-avatars": ["@sandbox/09-identicon-avatars@workspace:sandboxes/09-identicon-avatars"],
 
-    "@sandbox/fetch-streaming": ["@sandbox/fetch-streaming@workspace:sandboxes/fetch-streaming"],
+    "@sandbox/10-wikipedia-search": ["@sandbox/10-wikipedia-search@workspace:sandboxes/10-wikipedia-search"],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
