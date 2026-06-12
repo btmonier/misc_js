@@ -19,6 +19,8 @@ const resetBtn = document.getElementById("reset")!;
 const balls: Ball[] = [];
 const DPR = Math.min(window.devicePixelRatio || 1, 2);
 
+const CANVAS_BG = "#f8f9fa";
+
 function resize() {
   const w = window.innerWidth;
   const h = window.innerHeight;
@@ -74,11 +76,12 @@ function step(dt: number) {
 function draw() {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  ctx!.clearRect(0, 0, w, h);
+  ctx!.fillStyle = CANVAS_BG;
+  ctx!.fillRect(0, 0, w, h);
   for (const b of balls) {
     ctx!.beginPath();
     ctx!.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-    ctx!.fillStyle = `hsl(${b.hue} 80% 60% / 0.85)`;
+    ctx!.fillStyle = `hsl(${b.hue} 65% 48%)`;
     ctx!.fill();
   }
 }

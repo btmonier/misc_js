@@ -67,6 +67,15 @@ let lastEditKey = "";
 let sheet: HTMLImageElement | null = null;
 let lastFrame = performance.now();
 
+const CANVAS_BG = "#f8f9fa";
+const GRID_LINE = "#dadce0";
+const WALL = "#bdc1c6";
+const EXPLORED = "rgba(26, 115, 232, 0.14)";
+const PATH = "rgba(26, 115, 232, 0.55)";
+const SELECTION = "#1a73e8";
+const GOAL_FILL = "rgba(234, 134, 0, 0.18)";
+const GOAL_STROKE = "#ea8600";
+
 function idx(x: number, y: number): number {
   return y * GRID_W + x;
 }
@@ -512,8 +521,9 @@ function drawSelection(): void {
   const leg = Math.max(3, half * 0.22);
   const pulse = 0.75 + Math.sin(selectionPulse * 6) * 0.25;
 
-  ctx.strokeStyle = `rgba(74, 222, 128, ${pulse})`;
+  ctx.strokeStyle = SELECTION;
   ctx.lineWidth = 1.5;
+  ctx.globalAlpha = pulse;
   ctx.lineCap = "square";
 
   const x0 = spriteX - half;
@@ -535,6 +545,7 @@ function drawSelection(): void {
   ctx.lineTo(x0, y1);
   ctx.lineTo(x0, y1 - leg);
   ctx.stroke();
+  ctx.globalAlpha = 1;
 }
 
 function drawDestinationMarker(): void {
@@ -542,8 +553,8 @@ function drawDestinationMarker(): void {
 
   const pos = cellCenter(goal);
   const r = Math.max(4, cellW * 0.16);
-  ctx.strokeStyle = "rgba(250, 204, 21, 0.85)";
-  ctx.fillStyle = "rgba(250, 204, 21, 0.2)";
+  ctx.strokeStyle = GOAL_STROKE;
+  ctx.fillStyle = GOAL_FILL;
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2);
@@ -600,16 +611,16 @@ function stepMovement(dt: number): void {
 function drawGrid(): void {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  ctx.fillStyle = "#0b0d12";
+  ctx.fillStyle = CANVAS_BG;
   ctx.fillRect(0, 0, w, h);
 
   for (const cell of explored) {
-    ctx.fillStyle = "rgba(56, 189, 248, 0.12)";
+    ctx.fillStyle = EXPLORED;
     ctx.fillRect(padX + cell.x * cellW + 0.5, padY + cell.y * cellH + 0.5, cellW - 1, cellH - 1);
   }
 
   if (path.length > 1) {
-    ctx.strokeStyle = "rgba(74, 222, 128, 0.55)";
+    ctx.strokeStyle = PATH;
     ctx.lineWidth = Math.max(2, cellW * 0.18);
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -628,7 +639,7 @@ function drawGrid(): void {
     ctx.stroke();
   }
 
-  ctx.fillStyle = "#334155";
+  ctx.fillStyle = WALL;
   for (let y = 0; y < GRID_H; y++) {
     for (let x = 0; x < GRID_W; x++) {
       if (tiles[idx(x, y)] === TILE_UNWALKABLE) {
@@ -637,7 +648,7 @@ function drawGrid(): void {
     }
   }
 
-  ctx.strokeStyle = "rgba(255,255,255,0.06)";
+  ctx.strokeStyle = GRID_LINE;
   ctx.lineWidth = 1;
   ctx.beginPath();
   for (let x = 0; x <= GRID_W; x++) {

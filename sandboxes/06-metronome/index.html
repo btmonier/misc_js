@@ -10,11 +10,8 @@
   <body>
     <main id="app">
       <header class="masthead">
-        <div>
-          <h1>Metronome</h1>
-          <p class="subtitle">Precise clicks via the Web Audio clock. Space starts or stops (except in text fields, the bar-length menu, or the accent checkbox).</p>
-        </div>
-        <button type="button" id="toggle" class="btn-primary" aria-pressed="false">Start</button>
+        <h1>Metronome</h1>
+        <p class="subtitle">Precise clicks via the Web Audio clock. Space starts or stops (except in text fields, the bar-length menu, or the accent checkbox).</p>
       </header>
 
       <section class="stage" aria-label="Beat indicator">
@@ -27,6 +24,10 @@
       </section>
 
       <section class="controls" aria-label="Metronome settings">
+        <div class="controls-actions">
+          <button type="button" id="toggle" class="btn-primary" aria-pressed="false">Start</button>
+        </div>
+
         <div class="field">
           <label for="bpm-range">Tempo</label>
           <div class="bpm-row">

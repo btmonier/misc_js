@@ -30,6 +30,10 @@ let playing = false;
 let stepAccumMs = 0;
 let lastFrame = performance.now();
 
+const CANVAS_BG = "#f8f9fa";
+const GRID_LINE = "#dadce0";
+const ALIVE = "#1a73e8";
+
 function idx(x: number, y: number): number {
   return y * GRID_W + x;
 }
@@ -156,10 +160,10 @@ function onPointerUp(ev: PointerEvent): void {
 function draw(): void {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  ctx.fillStyle = "#0b0d12";
+  ctx.fillStyle = CANVAS_BG;
   ctx.fillRect(0, 0, w, h);
 
-  ctx.strokeStyle = "rgba(255,255,255,0.06)";
+  ctx.strokeStyle = GRID_LINE;
   ctx.lineWidth = 1;
   ctx.beginPath();
   for (let x = 0; x <= GRID_W; x++) {
@@ -174,7 +178,7 @@ function draw(): void {
   }
   ctx.stroke();
 
-  ctx.fillStyle = "#4ade80";
+  ctx.fillStyle = ALIVE;
   for (let y = 0; y < GRID_H; y++) {
     for (let x = 0; x < GRID_W; x++) {
       if (cur[idx(x, y)]) {
