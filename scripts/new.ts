@@ -5,7 +5,7 @@
  *
  *   bun run new <slug> [--template vanilla]
  *
- * Copies `templates/<template>/` → `sandboxes/<slug>/`,
+ * Copies `templates/<template>/` -> `sandboxes/<slug>/`,
  * substitutes the `__NAME__` placeholder, then runs `bun install`
  * at the root so Bun registers the new workspace.
  */
@@ -90,11 +90,11 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`→ Creating sandbox "${slug}" from template "${template}"`);
+  console.log(`-> Creating sandbox "${slug}" from template "${template}"`);
   await cp(templateDir, targetDir, { recursive: true });
   await substitutePlaceholders(targetDir, slug);
 
-  console.log("→ Linking workspace (bun install)");
+  console.log("-> Linking workspace (bun install)");
   await $`bun install`.cwd(ROOT).quiet();
 
   console.log("");
