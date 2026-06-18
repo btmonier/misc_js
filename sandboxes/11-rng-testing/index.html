@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RNG testing lab</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="masthead">
+        <h1>RNG testing lab</h1>
+        <p class="subtitle">
+          Compare random number generators and run basic statistical tests for uniform i.i.d. noise.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Generator settings">
+        <label class="field" for="generator">
+          <span class="field-label">Generator</span>
+          <select id="generator"></select>
+        </label>
+
+        <label class="field" for="sample-size">
+          <span class="field-label">Sample size</span>
+          <input
+            id="sample-size"
+            type="number"
+            min="100"
+            max="1000000"
+            step="100"
+            value="10000"
+          />
+        </label>
+
+        <label class="field" for="seed" id="seed-field" hidden>
+          <span class="field-label">Seed</span>
+          <input id="seed" type="number" min="0" step="1" value="42" />
+        </label>
+
+        <button type="button" id="generate" class="btn-primary">Generate &amp; analyze</button>
+      </section>
+
+      <p id="gen-desc" class="gen-desc"></p>
+      <p id="timing" class="timing" aria-live="polite"></p>
+
+      <div class="charts">
+        <figure class="chart">
+          <figcaption>
+            Histogram
+            <span class="chart-hint">dashed line = expected count per bin</span>
+          </figcaption>
+          <div class="chart-canvas-wrap chart-canvas-wrap--wide">
+            <canvas id="histogram" aria-label="Value histogram"></canvas>
+          </div>
+        </figure>
+        <figure class="chart">
+          <figcaption>
+            Consecutive pairs (x<sub>i</sub>, x<sub>i+1</sub>)
+            <span class="chart-hint">should fill the unit square evenly</span>
+          </figcaption>
+          <div class="chart-canvas-wrap chart-canvas-wrap--square">
+            <canvas id="scatter" aria-label="Consecutive value scatter plot"></canvas>
+          </div>
+        </figure>
+      </div>
+
+      <section aria-labelledby="stats-heading">
+        <h2 id="stats-heading" class="section-title">Randomness statistics</h2>
+        <p class="stats-note">
+          Tests use α = 0.05. A <strong>pass</strong> means the statistic is consistent with a
+          uniform source; <strong>fail</strong> suggests bias, correlation, or a bad PRNG - not
+          proof of true randomness.
+        </p>
+        <div id="stats-grid" class="stats-grid"></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
