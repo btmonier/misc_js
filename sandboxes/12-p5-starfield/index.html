@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p5 Starfield</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2214%22>&#10024;</text></svg>" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="sketch"></div>
+
+    <aside class="hud">
+      <strong>Starfield</strong>
+      <p class="hint">3D warp field in p5.js WEBGL. Move the mouse to steer, click to boost.</p>
+
+      <label class="control">
+        warp speed <span id="speedOut">12</span>
+        <input id="speed" type="range" min="0" max="60" value="12" step="1" />
+      </label>
+
+      <label class="control">
+        stars <span id="countOut">900</span>
+        <input id="count" type="range" min="100" max="3000" value="900" step="50" />
+      </label>
+
+      <label class="control">
+        trail length <span id="trailOut">6</span>
+        <input id="trail" type="range" min="0" max="30" value="6" step="1" />
+      </label>
+
+      <label class="toggle">
+        <input id="spin" type="checkbox" checked />
+        drift &amp; mouse steering
+      </label>
+
+      <div>fps: <span id="fps">&mdash;</span></div>
+    </aside>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
