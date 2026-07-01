@@ -56,6 +56,15 @@
         "@types/p5": "^1.7.7",
       },
     },
+    "sandboxes/13-flyweight-rts": {
+      "name": "@sandbox/13-flyweight-rts",
+      "dependencies": {
+        "p5": "^2.3.0",
+      },
+      "devDependencies": {
+        "@types/p5": "^1.7.7",
+      },
+    },
   },
   "packages": {
     "@babel/runtime": ["@babel/runtime@7.29.7", "", {}, "sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw=="],
@@ -149,6 +158,8 @@
     "@sandbox/11-rng-testing": ["@sandbox/11-rng-testing@workspace:sandboxes/11-rng-testing"],
 
     "@sandbox/12-p5-starfield": ["@sandbox/12-p5-starfield@workspace:sandboxes/12-p5-starfield"],
+
+    "@sandbox/13-flyweight-rts": ["@sandbox/13-flyweight-rts@workspace:sandboxes/13-flyweight-rts"],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
