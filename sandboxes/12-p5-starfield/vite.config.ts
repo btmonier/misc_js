@@ -9,5 +9,7 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: true,
+    // Modular p5 (core + webgl) still minifies to ~630 kB; that is expected.
+    chunkSizeWarningLimit: 700,
   },
 });

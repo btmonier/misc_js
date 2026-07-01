@@ -1,4 +1,4 @@
-import p5 from "p5";
+import p5 from "./p5-lite";
 
 /**
  * A 3D warp-speed starfield rendered with p5.js in WEBGL mode.
@@ -75,13 +75,13 @@ const sketch = (p: p5) => {
     p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     p.pixelDensity(Math.min(window.devicePixelRatio || 1, 2));
     // Camera sits at +z looking at the origin; this is where stars "arrive".
-    nearPlane = (p.height / 2) / Math.tan(p.PI / 6) - 60;
+    nearPlane = p.height / 2 / Math.tan(p.PI / 6) - 60;
     stars = Array.from({ length: controls.count }, () => spawn(false));
   };
 
   p.windowResized = () => {
     p.resizeCanvas(p.windowWidth, p.windowHeight);
-    nearPlane = (p.height / 2) / Math.tan(p.PI / 6) - 60;
+    nearPlane = p.height / 2 / Math.tan(p.PI / 6) - 60;
   };
 
   p.mousePressed = () => {
@@ -140,11 +140,7 @@ const sketch = (p: p5) => {
 };
 
 function wireControls() {
-  const bind = (
-    id: string,
-    outId: string,
-    key: "speed" | "count" | "trail",
-  ) => {
+  const bind = (id: string, outId: string, key: "speed" | "count" | "trail") => {
     const input = el<HTMLInputElement>(id);
     const out = el(outId);
     const sync = () => {
