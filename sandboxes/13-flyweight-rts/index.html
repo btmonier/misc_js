@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyweight RTS</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="sketch"></div>
+
+    <aside class="hud">
+      <strong>Flyweight RTS</strong>
+      <p class="hint">
+        Click the <em>barracks</em> (the circle) to train a squad. Hundreds of
+        square units share a handful of <em>flyweight</em> unit types.
+      </p>
+
+      <label class="control">
+        train unit type
+        <select id="unitType">
+          <option value="random" selected>random</option>
+        </select>
+      </label>
+
+      <label class="control">
+        squad size <span id="squadOut">20</span>
+        <input id="squad" type="range" min="1" max="80" value="20" step="1" />
+      </label>
+
+      <div class="stats">
+        <div>units: <span id="unitCount">0</span></div>
+        <div>flyweights: <span id="flyCount">0</span></div>
+        <div>fps: <span id="fps">&mdash;</span></div>
+      </div>
+
+      <div class="legend" id="legend"></div>
+    </aside>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
